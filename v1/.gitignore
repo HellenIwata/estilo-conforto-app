@@ -35,3 +35,6 @@ env/
 # Arquivos de IDE
 .idea/
 .vscode/
+
+#Arquivos atuais do app
+v1\models\config_manager_mongo.py

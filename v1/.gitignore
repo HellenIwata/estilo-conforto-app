@@ -1,0 +1,37 @@
+# Cache de Bytecode e arquivos otimizados
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Extensões C
+*.so
+
+# Distribuição / Empacotamento
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Ambientes Virtuais
+venv/
+env/
+.venv/
+.env/
+
+# Arquivos de IDE
+.idea/
+.vscode/

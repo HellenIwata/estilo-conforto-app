@@ -19,6 +19,18 @@
   src: url('../fonts/montserrat/Montserrat-Bold.ttf');
 }
 
+/* ----- [VARIABLES SET] -----  */
+:root {
+  --default-color: #fff;
+  --deault-text-color: #404040;
+  --primary-bg-color: #003366;
+  --default-grandient-color: linear-gradient(
+    90deg,
+    rgba(0, 51, 102, 0.9) 0%,
+    rgba(35, 115, 219, 0.81) 100%
+  );
+  --second-color: #000;
+}
 /* ----- [RESET STYLE] ----- */
 * {
   margin: 0;
@@ -30,9 +42,9 @@ body {
   height: 100%;
   font-family: Poppins-Regular, sans-serif;
   align-items: center;
-  background: #002a59;
-  background-image: linear-gradient(90deg, #002a59, #004bad);
-  color: #404040;
+  background: var(--default-bg-color);
+  /*background-image: linear-gradient(90deg, #002a59, #004bad);*/
+  color: var(--deault-text-color);
   display: flex;
   font-size: 14px;
   font-family: 'Roboto';
@@ -63,11 +75,14 @@ body {
   border-radius: 10px;
   min-height: 90vh;
   display: flex;
-  background-color: #fff;
+  background-image: var(--default-grandient-color);
+  color: var(--second-color);
+  align-items: center;
   /* overflow: hidden; */
   gap: 50px;
   justify-content: center;
   flex-wrap: nowrap;
+  border: solid 2px var(--primary-bg-color);
 }
 
 .logo {
@@ -107,8 +122,8 @@ form {
 
 .bar {
   /* background: #002a59; */
-  background-image: linear-gradient(90deg, #002a59, #004bad);
-  height: 4px;
+  background-color: var(--second-color);
+  height: 2px;
   width: 100%;
 }
 
@@ -133,8 +148,9 @@ form {
   border: none;
   padding: 10px;
   width: 100%;
-  background-color: #e6e6e6;
-  color: #404040;
+  background-color: var(--default-color);
+  color: var(--deault-text-color);
+  border: solid 1px var(--second-color);
 }
 
 .checkbox {
@@ -153,22 +169,24 @@ form {
 }
 button {
   padding: 15px;
-  width: 250px;
-  border-radius: 5vh;
-  background-image: linear-gradient(#002a59, #004bad);
 
-  border: solid 1px #002a59;
-  border-right-width: 4.5px;
-  border-bottom-width: 4.5px;
-  color: #ececec;
+  width: 250px;
+  height: 45px;
+
+  border-radius: 5vh;
+  background-color: var(--default-color);
+
+  border: solid 2px var(--second-color);
+
+  color: var(--second-color);
   font-weight: 700;
   text-transform: uppercase;
 }
 
 button:hover {
-  color: #ececec;
-  background-image: linear-gradient(90deg, rgba(0, 42, 89, 0.9) 0%, rgba(0, 95, 219, 0.9) 100%);
-  border: solid 1px rgba(0, 42, 89, 0.9);
+  color: var(--default-color);
+  background-image: var(--default-grandient-color);
+  border: solid 1px var(--primary-bg-color);
 }
 
 /* ----------- [ RESPONSIVE STYLE ] ----------- */
@@ -196,14 +214,16 @@ button:hover {
     width: 300px;
     display: flex;
     justify-content: center;
-    margin-top: 15%;
+    padding: 15px;
+    /* margin-top: 15%; */
   }
   .btn button:hover {
-    color: #ececec;
-    background-image: linear-gradient(90deg, rgba(0, 42, 89, 0.9) 0%, rgba(0, 95, 219, 0.9) 100%);
-    border: solid 1px rgba(0, 42, 89, 0.9);
+    color: var(--default-color);
+    background-color: var(--primary-bg-color);
+    border: solid 1px var(--primary-bg-color);
   }
 }
+
 @media (max-width: 768px) {
   .wrap-login {
     padding: 100px 15px 35px 15px;

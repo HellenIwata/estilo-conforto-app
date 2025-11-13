@@ -1,0 +1,454 @@
+/* ----- [FONT] ----- */
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('../fonts/poppins/Poppins-Regular.ttf');
+}
+
+@font-face {
+  font-family: Poppins-Bold;
+  src: url('../fonts/poppins/Poppins-Bold.ttf');
+}
+
+@font-face {
+  font-family: Poppins-Medium;
+  src: url('../fonts/poppins/Poppins-Medium.ttf');
+}
+
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url('../fonts/montserrat/Montserrat-Bold.ttf');
+}
+
+/* ----- [VARIABLES SET] -----  */
+:root {
+  /*-- COLOR ---*/
+  --default-color: #fff;
+  --deault-text-color: #404040;
+  --primary-bg-color: #003366;
+  --default-grandient-color: linear-gradient(
+    90deg,
+    rgba(0, 51, 102, 0.9) 0%,
+    rgba(35, 115, 219, 0.81) 100%
+  );
+  --second-color: #000;
+
+  /*-- FONT-FAMILY ---*/
+  --default-title-font-family: 'Palanquin Dark', sans-serif;
+
+  /*-- FONT-SIZE ---*/
+  --default-title-font-size: 1rem;
+  --default-text-font-size: 12px;
+}
+/* ----- [RESET STYLE] ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-clip-margin: unset;
+  text-decoration: none;
+  list-style: none;
+  text-transform: uppercase;
+}
+body {
+  min-height: 100vh; /* Garante que o body ocupe no mínimo a altura total da tela */
+  font-family: Poppins-Regular, sans-serif;
+  background-color: var(--default-bg-color);
+  /*background-image: linear-gradient(90deg, #002a59, #004bad);*/
+  color: var(--deault-text-color);
+  display: flex;
+  flex-direction: column; /* Organiza os itens (header, main, footer) em coluna */
+  font-size: var(--default-text-font-size);
+  font-family: var(--default-title-font-family);
+}
+
+/* ----- [STYLE PAGE MAIN] -----  */
+.page-content-main {
+  flex-grow: 1;
+  width: 100%;
+  padding: 20px;
+}
+
+/* ----- [HEADER & NAVIGATION STYLE] ----- */
+.page-header {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px;
+  border-bottom: solid 1px var(--primary-bg-color);
+  width: 100%;
+  height: 10vh;
+  align-items: center;
+  position: static;
+  box-shadow: 0 4px 4px rgba(0, 51, 102, 0.5);
+}
+.main-navigation {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-logo-container {
+  width: 10%; /* Pode ser ajustado */
+  padding: 5px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.header-logo-container a img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Oculta o ícone do menu e o checkbox por padrão (para telas grandes) */
+.menu-icon,
+.menu-toggle {
+  display: none;
+}
+
+.main-menu-content {
+  width: 90%; /* Ocupa a maior parte do espaço em desktop */
+  padding: 10px;
+}
+
+.menu-nav-list ul {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.menu-nav-list ul li {
+  font-size: var(--default-title-font-size);
+  font-weight: 900;
+  padding: 10px;
+  position: relative; /* Necessário para posicionar o submenu */
+}
+
+.menu-nav-list ul li a {
+  color: var(--primary-bg-color);
+}
+.menu-nav-list ul li a:hover {
+  color: var(--deault-text-color);
+}
+
+/* ----- [SUBMENU DROPDOWN STYLE] ----- */
+.submenu-dropdown {
+  display: none; /* Esconde o submenu por padrão */
+  position: absolute;
+  background-color: #f9f9f9dc;
+  min-width: 160px;
+  left: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  list-style: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.submenu-dropdown ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.submenu-dropdown ul li a {
+  color: var(--primary-bg-color);
+  font-weight: 400;
+}
+
+.menu-nav-list ul li:hover > .submenu-dropdown {
+  display: block; /* Mostra o submenu no hover em desktop */
+}
+
+/* ----- [FOOTER STYLE] -----*/
+.page-footer {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px;
+  border-top: solid 1px var(--primary-bg-color);
+  width: 100%;
+  height: 10vh;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--default-color);
+  box-shadow: 0 -4px 4px rgba(0, 51, 102, 0.2);
+}
+
+.footer-icon-link a object {
+  /* Estilize seus SVGs, se necessário */
+  width: 25px;
+  height: 25px;
+}
+
+/* ----- [RESPONSIVE STYLE] ----- */
+@media (max-width: 992px) {
+  .wrap-login {
+    width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .logo img {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 50%;
+    padding: 20px;
+  }
+
+  .login-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .btn {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    /* margin-top: 15%; */
+  }
+  .btn button:hover {
+    color: var(--default-color);
+    background-color: var(--primary-bg-color);
+    border: solid 1px var(--primary-bg-color);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    height: 10vh;
+  }
+
+  .main-navigation {
+    justify-content: space-between;
+  }
+
+  /* Exibe o ícone do menu em telas pequenas */
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+    z-index: 1002;
+  }
+  .menu-icon .bar {
+    /* Usando a nova classe .bar */
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin-bottom: 5px;
+    background-color: var(--primary-bg-color);
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Oculta o container de navegação principal por padrão no mobile */
+  .main-menu-content {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 10vh; /* Ajuste para a altura do header */
+    left: 0;
+    z-index: 100;
+    background-color: var(--default-color);
+    box-shadow: 0 4px 4px rgba(0, 51, 102, 0.5);
+    padding: 0; /* Remova padding horizontal */
+  }
+
+  /* Estiliza a lista principal para o modo mobile */
+  .menu-nav-list ul {
+    flex-direction: column;
+    padding: 0;
+    align-items: flex-start;
+  }
+
+  .menu-nav-list ul li {
+    width: 100%;
+    padding: 10px 15px; /* Adiciona padding para as bordas */
+    border-bottom: 1px solid #eee;
+  }
+
+  /* Ajuste para o submenu no mobile (controlado pelo JS) */
+  .submenu-dropdown {
+    position: static;
+    display: block; /* O JS controla a altura */
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0 0 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  /* Remove a borda do último item da lista */
+  .menu-nav-list ul li:last-child {
+    border-bottom: none;
+  }
+}
+/* --- [CSS-ONLY SUBMENU TOGGLE LOGIC] --- */
+
+/* 1. Oculta o checkbox */
+.submenu-toggle {
+  display: none;
+}
+
+/* 2. Estiliza a label para se comportar como um item de menu clicável */
+.menu-item-with-submenu {
+  display: block;
+  cursor: pointer;
+}
+
+/* 3. Expande o submenu quando o checkbox associado está marcado */
+.submenu-toggle:checked ~ .menu-item-with-submenu > .submenu-dropdown {
+  max-height: 500px; /* Um valor alto o suficiente para caber o conteúdo */
+}
+
+@media (max-width: 576px) {
+  .page-header {
+    height: 7vh;
+  }
+
+  .main-navigation {
+    justify-content: space-between;
+  }
+
+  .header-logo-container {
+    display: none;
+  }
+
+  /* Exibe o ícone do menu em telas pequenas */
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    position: relative; /* Adicionado para z-index funcionar */
+    z-index: 1002; /* Garante que o ícone fique ACIMA do menu e do overlay */
+  }
+  .menu-toggle:checked ~ .menu-icon .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+  .menu-toggle:checked ~ .menu-icon .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle:checked ~ .menu-icon .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+  }
+  .menu-icon .bar {
+    /* Usando a nova classe .bar */
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin-bottom: 5px;
+    background-color: var(--primary-bg-color);
+    transition: all 0.3s ease-in-out;
+  }
+  /* Overlay para fechar o menu */
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  .menu-toggle:checked ~ .overlay {
+    display: block;
+  }
+
+  /* 1. Container do Menu (onde está o ícone hamburger e o conteúdo) */
+  .menu-mobile-container {
+    /* Garante que o container de navegação se alinhe à direita do header */
+    z-index: 1001; /* Garante que o container fique acima do overlay */
+    margin-left: auto;
+  }
+
+  /* 2. Oculta o container de navegação principal por padrão no mobile */
+  .main-menu-content {
+    /* Novo Posicionamento Fixo e Dimensões */
+    position: absolute; /* Fixa o menu em relação à viewport */
+    top: 0; /* Começa no topo da tela */
+    right: 0; /* Alinha à direita (melhor para menus laterais) */
+
+    /* Largura e Altura solicitadas */
+    width: 50%; /* Define a largura do menu para 50% da tela */
+    height: 100vh; /* Define a altura para 100% da viewport */
+
+    /* Estilos Visuais */
+    background-color: var(--default-color); /* Fundo ligeiramente diferente para destaque */
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.3); /* Sombra lateral */
+    z-index: 1000;
+
+    /* Esconde o menu fora da tela usando Transform */
+    transform: translateX(
+      100%
+    ); /* Move o menu 100% da sua própria largura para fora da tela (direita) */
+    transition: transform 0.3s ease-in-out; /* Adiciona animação de transição */
+
+    /* Garante que o menu possa ter scroll se o conteúdo for longo */
+    overflow-y: auto;
+
+    /* Esconde o display, mas a transição funciona mesmo assim! */
+    display: none; /* Oculta o menu por padrão */
+
+  }
+
+  /* 3. Abertura do Menu: Quando o checkbox está marcado, move para a posição 0 */
+  .menu-toggle:checked ~ .main-menu-content {
+    display: block; /* Exibe o menu para que a animação possa ocorrer */
+    transform: translateX(0); /* Traz o menu para dentro da tela */
+  }
+
+  /* Cabeçalho dentro do menu mobile */
+  .menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  .menu-title {
+    font-family: Poppins-Bold, sans-serif;
+    font-size: 1.2rem;
+    color: var(--primary-bg-color);
+    font-weight: 600;
+  }
+  .close-icon {
+    font-size: 2rem;
+    color: var(--deault-text-color);
+    color: var(--primary-bg-color);
+    cursor: pointer;
+  }
+  
+
+  /* 4. Estilos internos do menu (ajuste de padding) */
+  
+  .menu-nav-list ul {
+    align-items: flex-start;
+  }
+
+  .menu-nav-list ul li {
+    width: 100%;
+    padding: 10px 15px; /* Adiciona padding para as bordas */
+    border-bottom: 1px solid #eee;
+    color: var(--primary-bg-color);
+  }
+  
+  /* Ajuste para o submenu no mobile */
+  .submenu-dropdown {
+    position: static;
+    display: block;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 10px 0 10px 20px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  /* Remove a borda do último item da lista */
+  .menu-nav-list ul li:last-child {
+    border-bottom: none;
+  }
+}

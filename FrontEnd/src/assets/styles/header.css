@@ -1,0 +1,21 @@
+/* ----- [VARIABLES SET] -----  */
+:root {
+  --default-color: #fff;
+  --deault-text-color: #404040;
+  --primary-bg-color: #003366;
+  --default-grandient-color: linear-gradient(
+    90deg,
+    rgba(0, 51, 102, 0.9) 0%,
+    rgba(35, 115, 219, 0.81) 100%
+  );
+  --second-color: #000;
+}
+
+.container-header{
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.header-menu{
+  display: flex;
+}

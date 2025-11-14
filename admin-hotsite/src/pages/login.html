@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,40 +7,39 @@
     <title>Entrar - Estilo&Conforto</title>
   </head>
   <body>
-    <section class="limiter">
-      <section class="container">
-        <div class="wrap-login">
-          <div class="logo">
+    <main class="login-page">
+      <div class="login-container">
+        <div class="login-card">
+          <div class="login-card__logo">
             <img src="/src/assets/images/logo2.png" alt="Logo Estilo e conforto" />
           </div>
-          <div class="login-form">
-            <form action="" method="post">
-              <div class="title-login">
+          <div class="login-card__form-wrapper">
+            <form class="login-form" action="" method="post">
+              <div class="login-form__title">
                 <h1>ENTRAR</h1>
-                <div class="bar"></div>
+                <div class="login-form__divider"></div>
               </div>
-              <div class="inputs general">
-                <label type="text">USUÁRIO</label>
+              <div class="form-group">
+                <label for="username">USUÁRIO</label>
                 <input type="text" id="username" value="" />
               </div>
 
-              <div class="inputs general">
+              <div class="form-group">
                 <label for="password">Senha</label>
-                <input type="password" id="pass" />
+                <input type="password" id="password" />
               </div>
 
-              <div class="checkbox general">
-                <input type="checkbox" name="check" />
-                <p>Lembrar-me</p>
+              <div class="form-group form-group--checkbox">
+                <input type="checkbox" id="remember-me" name="check" />
+                <label for="remember-me">Lembrar-me</label>
+              </div>
+              <div class="login-form__actions ">
+                <button type="submit">Entrar</button>
               </div>
             </form>
-
-            <div class="btn general">
-              <button type="button">Entrar</button>
-            </div>
           </div>
         </div>
-      </section>
-    </section>
+      </div>
+    </main>
   </body>
 </html>

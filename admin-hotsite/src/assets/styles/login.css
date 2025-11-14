@@ -34,7 +34,7 @@ body {
 /* ------------------------------------------------- */
 
 .login-page {
-  width: 375px;
+  width: 100%;
   min-height: 100vh;
 }
 
@@ -48,7 +48,7 @@ body {
 }
 
 .login-card {
-  width: 300px;
+  width: 90%;
   border-radius: 10px;
   min-height: 90vh;
   display: flex;
@@ -161,7 +161,7 @@ button:hover {
   }
 
   .login-card{
-    width: 700px;
+    width: 90%;
     display: flex;
     flex-wrap: nowrap;
   }
